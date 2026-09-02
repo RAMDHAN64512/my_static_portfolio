@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramdhan Tiu | 3D AI Cloud Engineer Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Ramdhan Tiu - AI Cloud Infrastructure Engineer, AWS & DevOps Specialist building resilient, scalable, and intelligent multi-cloud systems.">
+    <meta name="keywords"
+        content="Ramdhan Tiu, Cloud Engineer, AI Infrastructure, AWS, Kubernetes, Terraform, Docker, DevOps, MLOps">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Glowing Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Navigation Header -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-cloud-bolt"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">RAMDHAN TIU</span>
+                    <span class="brand-sub"><i class="fa-solid fa-microchip"></i> AI CLOUD ARCHITECT</span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active"><i class="fa-solid fa-house-signal"></i> Core</a></li>
+                <li><a href="#about"><i class="fa-solid fa-user-gear"></i> About</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-layer-group"></i> Tech Matrix</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-cubes-stacked"></i> Projects</a></li>
+                <li><a href="#ai-terminal"><i class="fa-solid fa-terminal"></i> AI Assistant</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-paper-plane"></i> Connect</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="system-status">
+                    <span class="status-pulse"></span>
+                    <span class="status-text">AI CORE: ONLINE</span>
+                </div>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <!-- Hero Left Content -->
+            <div class="hero-content">
+                <div class="badge-pill">
+                    <i class="fa-solid fa-sparkles"></i> NEXT-GEN CLOUD & AI INFRASTRUCTURE
+                </div>
+
+                <h1 class="hero-title">
+                    Hello, I'm <span class="highlight-name">Ramdhan Tiu</span>
+                </h1>
+
+                <div class="typing-container">
+                    <span class="typing-prefix">> </span>
+                    <span id="typing-text"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+
+                <p class="hero-description" id="hero-description">
+                    Architecting resilient, self-healing cloud ecosystems, automated CI/CD pipelines, and
+                    high-performance AI model deployment platforms across AWS, Azure, and Kubernetes.
+                </p>
+
+                <!-- Quick Stats Badges -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="99.99">99.99%</span>
+                        <span class="stat-label">Cloud Uptime</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="15">15+</span>
+                        <span class="stat-label">Multi-Cloud Tools</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="50">50+</span>
+                        <span class="stat-label">Deployments</span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta">
+                    <a href="resume.pdf" download class="btn btn-primary">
+                        <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fa-solid fa-rocket"></i> Explore Projects
+                    </a>
+                    <a href="#ai-terminal" class="btn btn-glow">
+                        <i class="fa-solid fa-robot"></i> Ask AI Twin
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Right: 3D Holographic Profile Card -->
+            <div class="hero-card-wrapper">
+                <div class="profile-3d-card" id="profile-card">
+                    <!-- Glassmorphism Card Backdrop -->
+                    <div class="card-glass"></div>
+
+                    <!-- Ambient Dual Color Lighting Glow -->
+                    <div class="dual-glow cyan-glow"></div>
+                    <div class="dual-glow orange-glow"></div>
+
+                    <!-- Tech Border Overlay -->
+                    <div class="border-glow"></div>
+                    <div class="cyber-corner top-left"></div>
+                    <div class="cyber-corner top-right"></div>
+                    <div class="cyber-corner bottom-left"></div>
+                    <div class="cyber-corner bottom-right"></div>
+
+                    <!-- Profile Image Container -->
+                    <div class="profile-image-container">
+                        <img src="background.png" alt="Ramdhan Tiu - Cloud Engineer Profile" class="profile-img">
+                        <div class="image-overlay-scanline"></div>
+                        <div class="image-glare"></div>
+                    </div>
+
+                    <!-- Profile Card Info Footer -->
+                    <div class="card-details">
+                        <div class="card-header">
+                            <h3 class="card-name">RAMDHAN TIU</h3>
+                            <span class="card-tag">CLOUD & MLOPS ENGINEER</span>
+                        </div>
+
+                        <div class="card-availability">
+                            <span class="pulse-dot"></span>
+                            <span>Open for Cloud Architect & AI Infra Roles</span>
+                        </div>
+
+                        <!-- Floating Badges on Card -->
+                        <div class="card-tech-pills">
+                            <span class="pill"><i class="fa-brands fa-aws"></i> AWS</span>
+                            <span class="pill"><i class="fa-solid fa-dharmachakra"></i> Kubernetes</span>
+                            <span class="pill"><i class="fa-solid fa-cubes"></i> Terraform</span>
+                            <span class="pill"><i class="fa-brands fa-docker"></i> Docker</span>
+                            <span class="pill"><i class="fa-solid fa-brain"></i> MLOps</span>
+                        </div>
+                    </div>
+
+                    <!-- Holographic Floating Badge -->
+                    <div class="holo-badge">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>AWS CERTIFIED</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <a href="#about">
+                <div class="mouse-icon">
+                    <div class="wheel"></div>
+                </div>
+                <span>SCROLL TO EXPLORE</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="section-container">
+            <div class="section-header center">
+                <div class="section-tag"><i class="fa-solid fa-network-wired"></i> SYSTEM ARCHITECTURE</div>
+                <h2 class="section-title">Bridging Cloud Scalability & <span class="gradient-text">AI Automation</span>
+                </h2>
+                <p class="section-subtitle">Pioneering resilient infrastructure for the next generation of cloud and
+                    artificial intelligence applications.</p>
+            </div>
+
+            <div class="about-grid">
+                <!-- About Box 1 -->
+                <div class="about-card feature-card">
+                    <div class="card-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <h3>Multi-Cloud Engineering</h3>
+                    <p>Designing secure, high-availability architecture across AWS, Azure, and Google Cloud with strict
+                        SLA guarantees and auto-scaling policies.</p>
+                    <div class="tech-chips">
+                        <span>AWS EC2/S3</span><span>EKS/GKE</span><span>VPC Peering</span>
+                    </div>
+                </div>
+
+                <!-- About Box 2 -->
+                <div class="about-card feature-card">
+                    <div class="card-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <h3>Infrastructure as Code</h3>
+                    <p>Automating infrastructure provisioning with modular Terraform scripts, CloudFormation templates,
+                        and GitOps state management.</p>
+                    <div class="tech-chips">
+                        <span>Terraform</span><span>Ansible</span><span>GitOps</span>
+                    </div>
+                </div>
+
+                <!-- About Box 3 -->
+                <div class="about-card feature-card">
+                    <div class="card-icon"><i class="fa-solid fa-microchip-ai"></i></div>
+                    <h3>AI & MLOps Infrastructure</h3>
+                    <p>Deploying large-scale machine learning model pipelines, GPU node pools, serverless AI inference
+                        endpoints, and automated data workflows.</p>
+                    <div class="tech-chips">
+                        <span>Kubeflow</span><span>Triton Server</span><span>AWS Bedrock</span>
+                    </div>
+                </div>
+
+                <!-- About Box 4 -->
+                <div class="about-card feature-card">
+                    <div class="card-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                    <h3>Zero-Trust Cloud Security</h3>
+                    <p>Enforcing continuous security compliance, IAM role optimization, automated vulnerability
+                        scanning, and robust monitoring telemetry.</p>
+                    <div class="tech-chips">
+                        <span>IAM & Vault</span><span>Prometheus</span><span>Grafana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="section dark-bg">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag"><i class="fa-solid fa-sliders"></i> CAPABILITIES</div>
+                <h2 class="section-title">Technical <span class="gradient-text">Skill Matrix</span></h2>
+                <p class="section-subtitle">Industry-standard toolsets and cloud technologies optimized for speed,
+                    reliability, and security.</p>
+            </div>
+
+            <!-- Skill Category Tabs -->
+            <div class="skill-tabs">
+                <button class="tab-btn active" data-filter="all">All Skills</button>
+                <button class="tab-btn" data-filter="cloud">Cloud Platforms</button>
+                <button class="tab-btn" data-filter="devops">DevOps & IaC</button>
+                <button class="tab-btn" data-filter="container">Containers & Mesh</button>
+                <button class="tab-btn" data-filter="ai">AI / MLOps</button>
+                <button class="tab-btn" data-filter="security">Security & Monitoring</button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-matrix-grid">
+                <!-- Skill Card: AWS -->
+                <div class="skill-matrix-card" data-category="cloud">
+                    <div class="skill-icon-wrapper cyan-glow">
+                        <i class="fa-brands fa-aws"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>AWS Cloud</h4>
+                        <span class="skill-level">Expert</span>
+                        <p>EC2, S3, RDS, Lambda, VPC, IAM, Route53, ECS, EKS</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Kubernetes -->
+                <div class="skill-matrix-card" data-category="container">
+                    <div class="skill-icon-wrapper blue-glow">
+                        <i class="fa-solid fa-dharmachakra"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Kubernetes</h4>
+                        <span class="skill-level">Advanced</span>
+                        <p>Cluster Administration, Helm, Ingress, HPA, Service Mesh</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Docker -->
+                <div class="skill-matrix-card" data-category="container">
+                    <div class="skill-icon-wrapper cyan-glow">
+                        <i class="fa-brands fa-docker"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Docker Containerization</h4>
+                        <span class="skill-level">Expert</span>
+                        <p>Multi-stage Builds, Docker Compose, Security Hardening</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Terraform -->
+                <div class="skill-matrix-card" data-category="devops">
+                    <div class="skill-icon-wrapper purple-glow">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Terraform (IaC)</h4>
+                        <span class="skill-level">Advanced</span>
+                        <p>Declarative Modules, State Locking, Multi-Env Workflows</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Linux Administration -->
+                <div class="skill-matrix-card" data-category="devops">
+                    <div class="skill-icon-wrapper orange-glow">
+                        <i class="fa-brands fa-linux"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Linux & Bash Scripting</h4>
+                        <span class="skill-level">Expert</span>
+                        <p>Ubuntu/RHEL, Kernel Tuning, Systemd, Shell Automation</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 94%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: CI/CD Pipelines -->
+                <div class="skill-matrix-card" data-category="devops">
+                    <div class="skill-icon-wrapper cyan-glow">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>GitHub Actions & CI/CD</h4>
+                        <span class="skill-level">Advanced</span>
+                        <p>Automated Testing, Docker Build Push, GitOps with ArgoCD</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Python for Automation -->
+                <div class="skill-matrix-card" data-category="devops">
+                    <div class="skill-icon-wrapper blue-glow">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Python & Boto3</h4>
+                        <span class="skill-level">Advanced</span>
+                        <p>Cloud Scripting, AWS SDK, REST APIs, Automation Tools</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 86%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Azure Cloud -->
+                <div class="skill-matrix-card" data-category="cloud">
+                    <div class="skill-icon-wrapper blue-glow">
+                        <i class="fa-brands fa-microsoft"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Azure Cloud</h4>
+                        <span class="skill-level">Intermediate</span>
+                        <p>Azure VMs, AKS, Blob Storage, Entra ID, Virtual Networks</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Google Cloud Platform -->
+                <div class="skill-matrix-card" data-category="cloud">
+                    <div class="skill-icon-wrapper orange-glow">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Google Cloud (GCP)</h4>
+                        <span class="skill-level">Intermediate</span>
+                        <p>GKE Engine, Cloud Storage, BigQuery, IAM Policies</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 78%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: MLOps & AI Infrastructure -->
+                <div class="skill-matrix-card" data-category="ai">
+                    <div class="skill-icon-wrapper purple-glow">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>AI & MLOps Infrastructure</h4>
+                        <span class="skill-level">Advanced</span>
+                        <p>Model Serving, Vector DBs, GPU Clustering, AWS Bedrock</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Monitoring & Telemetry -->
+                <div class="skill-matrix-card" data-category="security">
+                    <div class="skill-icon-wrapper orange-glow">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Prometheus & Grafana</h4>
+                        <span class="skill-level">Advanced</span>
+                        <p>Metrics Telemetry, Alertmanager, Custom Dashboards</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 89%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Card: Cloud Security & Governance -->
+                <div class="skill-matrix-card" data-category="security">
+                    <div class="skill-icon-wrapper cyan-glow">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h4>Cloud Security & Zero-Trust</h4>
+                        <span class="skill-level">Advanced</span>
+                        <p>WAF, KMS Encryption, Least Privilege IAM, CloudTrail Auditing</p>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 87%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section id="projects" class="section">
+        <div class="section-container">
+            <div class="section-header center">
+                <div class="section-tag"><i class="fa-solid fa-laptop-code"></i> ARCHITECTURE PORTFOLIO</div>
+                <h2 class="section-title">Featured <span class="gradient-text">Cloud Projects</span></h2>
+                <p class="section-subtitle">Production-ready cloud architectures, Kubernetes deployments, and automated
+                    AI pipelines.</p>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project 1: AI-Driven Multi-Region Serverless Architecture -->
+                <div class="project-3d-card">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <span class="project-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> AI &
+                                Serverless</span>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="#" aria-label="Live Architecture Demo"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">AI-Driven Multi-Region Serverless Platform</h3>
+                        <p class="project-desc">
+                            Designed a resilient serverless backend utilizing AWS Lambda, DynamoDB Global Tables, API
+                            Gateway, and CloudFront CDN, integrated with AWS Bedrock AI for automated real-time text
+                            processing.
+                        </p>
+
+                        <div class="project-metrics">
+                            <div class="metric"><span class="m-val">99.99%</span><span class="m-lbl">Availability</span>
+                            </div>
+                            <div class="metric"><span class="m-val">&lt; 80ms</span><span class="m-lbl">Global
+                                    Latency</span></div>
+                            <div class="metric"><span class="m-val">40%</span><span class="m-lbl">Cost Saving</span>
+                            </div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span>AWS
+                                Lambda</span><span>DynamoDB</span><span>Terraform</span><span>CloudFront</span><span>AWS
+                                Bedrock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Enterprise EKS Kubernetes MLOps Pipeline -->
+                <div class="project-3d-card">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <span class="project-badge blue"><i class="fa-solid fa-dharmachakra"></i> Kubernetes /
+                                MLOps</span>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="#" aria-label="Live Demo"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Enterprise EKS Kubernetes MLOps Cluster</h3>
+                        <p class="project-desc">
+                            Automated deployment of an AWS EKS production cluster with ArgoCD GitOps, Kubeflow pipeline
+                            orchestration, Prometheus & Grafana monitoring, and Horizontal Pod Autoscaling (HPA) for
+                            machine learning models.
+                        </p>
+
+                        <div class="project-metrics">
+                            <div class="metric"><span class="m-val">Auto</span><span class="m-lbl">HPA Scaling</span>
+                            </div>
+                            <div class="metric"><span class="m-val">Zero</span><span class="m-lbl">Downtime
+                                    Deploy</span></div>
+                            <div class="metric"><span class="m-val">24/7</span><span class="m-lbl">Telemetry</span>
+                            </div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span>AWS
+                                EKS</span><span>Helm</span><span>ArgoCD</span><span>Prometheus</span><span>Grafana</span><span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Automated IaC Multi-Cloud Infrastructure -->
+                <div class="project-3d-card">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <span class="project-badge purple"><i class="fa-solid fa-cubes"></i> Terraform IaC</span>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="#" aria-label="Live Spec"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Zero-Trust Infrastructure as Code Blueprint</h3>
+                        <p class="project-desc">
+                            Created reusable modular Terraform blueprints for automated provisioning of secure VPC
+                            networks, ALB load balancers, IAM least-privilege policies, and HashiCorp Vault secrets
+                            management.
+                        </p>
+
+                        <div class="project-metrics">
+                            <div class="metric"><span class="m-val">100%</span><span class="m-lbl">Automated</span>
+                            </div>
+                            <div class="metric"><span class="m-val">0-Trust</span><span class="m-lbl">Security</span>
+                            </div>
+                            <div class="metric"><span class="m-val">SOC2</span><span class="m-lbl">Compliant</span>
+                            </div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span>Terraform</span><span>AWS VPC</span><span>IAM Roles</span><span>HashiCorp
+                                Vault</span><span>CloudTrail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Autonomous Cloud Cost & Resource Optimizer -->
+                <div class="project-3d-card">
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <span class="project-badge orange"><i class="fa-solid fa-brain"></i> Autonomous AI
+                                Bot</span>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank" aria-label="GitHub Code"><i
+                                        class="fa-brands fa-github"></i></a>
+                                <a href="#" aria-label="Live Spec"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">AI Cloud FinOps & Resource Optimizer</h3>
+                        <p class="project-desc">
+                            Built an automated Python bot leveraging AWS CloudWatch metrics and LLM AI recommendations
+                            to identify idle EC2 instances, unattached EBS volumes, and oversized RDS databases.
+                        </p>
+
+                        <div class="project-metrics">
+                            <div class="metric"><span class="m-val">$12k+</span><span class="m-lbl">Est. Savings</span>
+                            </div>
+                            <div class="metric"><span class="m-val">Daily</span><span class="m-lbl">Audit Scan</span>
+                            </div>
+                            <div class="metric"><span class="m-val">Slack</span><span class="m-lbl">Alert Bot</span>
+                            </div>
+                        </div>
+
+                        <div class="project-tech-stack">
+                            <span>Python</span><span>Boto3</span><span>AWS
+                                CloudWatch</span><span>Lambda</span><span>EventBridge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI ASSISTANT TERMINAL SECTION -->
+    <section id="ai-terminal" class="section dark-bg">
+        <div class="section-container">
+            <div class="section-header center">
+                <div class="section-tag"><i class="fa-solid fa-robot"></i> INTERACTIVE AI AGENT</div>
+                <h2 class="section-title">Ramdhan's <span class="gradient-text">AI Copilot</span></h2>
+                <p class="section-subtitle">Ask questions about Ramdhan's experience, AWS architecture, or request a
+                    quick resume summary.</p>
+            </div>
+
+            <div class="terminal-wrapper">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-title"><i class="fa-solid fa-terminal"></i> ramdhan-ai-terminal v2.4
+                        (x86_64-cloud-linux)</div>
+                    <div class="terminal-status"><span class="pulse-dot"></span> CONNECTED</div>
+                </div>
+
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-line system">
+                        <span class="prompt">system@ramdhan-ai:~$</span> Initializing AI Twin for Ramdhan Tiu (Cloud
+                        Engineer)...
+                    </div>
+                    <div class="terminal-line system success">
+                        <span class="prompt">system@ramdhan-ai:~$</span> Ready! Type a prompt below or click a quick
+                        command chip.
+                    </div>
+                </div>
+
+                <div class="terminal-quick-chips">
+                    <button class="chip-btn" data-query="What are Ramdhan's core AWS & Cloud skills?">⚡ Core
+                        Skills</button>
+                    <button class="chip-btn" data-query="Tell me about Ramdhan's Kubernetes experience.">☸️ Kubernetes &
+                        Docker</button>
+                    <button class="chip-btn" data-query="How does Ramdhan use AI in Cloud Engineering?">🤖 AI & Cloud
+                        Infra</button>
+                    <button class="chip-btn" data-query="How can I hire or contact Ramdhan Tiu?">📩 Contact
+                        Info</button>
+                </div>
+
+                <form class="terminal-input-row" id="terminal-form">
+                    <span class="prompt">user@guest:~$</span>
+                    <input type="text" id="terminal-input"
+                        placeholder="Type a message (e.g., 'What projects has Ramdhan built?')..." autocomplete="off">
+                    <button type="submit" class="terminal-send-btn" aria-label="Send Message"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & SOCIAL MEDIA SECTION -->
+    <section id="contact" class="section">
+        <div class="section-container">
+            <div class="section-header center">
+                <div class="section-tag"><i class="fa-solid fa-satellite-dish"></i> GET IN TOUCH</div>
+                <h2 class="section-title">Let's Build the <span class="gradient-text">Future of Cloud</span></h2>
+                <p class="section-subtitle">Have a project, job opportunity, or architecture discussion? Connect through
+                    any channel below.</p>
+            </div>
+
+            <!-- Social Media Grid Cards -->
+            <div class="social-grid">
+                <!-- LinkedIn Card -->
+                <a href="https://linkedin.com/in/ramdhantiu" target="_blank" class="social-card linkedin">
+                    <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="social-info">
+                        <h4>LinkedIn</h4>
+                        <span class="social-handle">@ramdhantiu</span>
+                    </div>
+                    <div class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+                <!-- GitHub Card -->
+                <a href="https://github.com/ramdhantiu" target="_blank" class="social-card github">
+                    <div class="social-icon"><i class="fa-brands fa-github"></i></div>
+                    <div class="social-info">
+                        <h4>GitHub</h4>
+                        <span class="social-handle">@ramdhantiu</span>
+                    </div>
+                    <div class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+                <!-- Twitter / X Card -->
+                <a href="https://twitter.com/ramdhantiu" target="_blank" class="social-card twitter">
+                    <div class="social-icon"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="social-info">
+                        <h4>Twitter / X</h4>
+                        <span class="social-handle">@ramdhantiu</span>
+                    </div>
+                    <div class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+                <!-- Email Direct Card -->
+                <a href="mailto:ramdhan.tiu@example.com" class="social-card email">
+                    <div class="social-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="social-info">
+                        <h4>Email Direct</h4>
+                        <span class="social-handle">ramdhan.tiu@example.com</span>
+                    </div>
+                    <div class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+                <!-- Discord Card -->
+                <a href="https://discord.com" target="_blank" class="social-card discord">
+                    <div class="social-icon"><i class="fa-brands fa-discord"></i></div>
+                    <div class="social-info">
+                        <h4>Discord</h4>
+                        <span class="social-handle">Ramdhan#CloudAI</span>
+                    </div>
+                    <div class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+                <!-- Instagram Card -->
+                <a href="https://instagram.com/ramdhantiu" target="_blank" class="social-card instagram">
+                    <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="social-info">
+                        <h4>Instagram</h4>
+                        <span class="social-handle">@ramdhantiu</span>
+                    </div>
+                    <div class="social-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+            </div>
+
+            <!-- Direct Contact Form -->
+            <div class="contact-form-wrapper">
+                <form id="contact-form" class="contact-form">
+                    <h3><i class="fa-solid fa-paper-plane"></i> Send Direct Message</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="form-name">Your Name</label>
+                            <input type="text" id="form-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Your Email</label>
+                            <input type="email" id="form-email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-subject">Subject</label>
+                        <input type="text" id="form-subject"
+                            placeholder="Cloud Infrastructure Inquiry / Job Opportunity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message">Message</label>
+                        <textarea id="form-message" rows="5"
+                            placeholder="Hi Ramdhan, I'd like to discuss a cloud engineering project..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fa-solid fa-paper-plane"></i> Dispatch Message
+                    </button>
+                    <div id="form-result" class="form-result"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2026 <strong>Ramdhan Tiu</strong>. Crafted with <i class="fa-solid fa-heart"
+                        style="color: #00f0ff;"></i> for Cloud & AI Engineering.</p>
+            </div>
+            <div class="footer-right">
+                <span><i class="fa-solid fa-shield"></i> Security Status: <strong>Encrypted</strong></span>
+                <span><i class="fa-solid fa-server"></i> Region: <strong>Global Edge</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
